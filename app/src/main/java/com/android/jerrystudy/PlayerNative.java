@@ -11,7 +11,7 @@ public class PlayerNative {
         System.loadLibrary("avfilter");
         System.loadLibrary("swscale");
         System.loadLibrary("avformat");
-        System.loadLibrary("native-ffmpeg");
+        System.loadLibrary("native_ffmpeg");
     }
 
 

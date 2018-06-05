@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 4.0)
-add_library( native-ffmpeg
+cmake_minimum_required(VERSION 3.4.1)
+add_library( native_ffmpeg
              SHARED
-             src/main/cpp/native-ffmpeg.cpp )
+             src/main/cpp/native_ffmpeg.cpp )
 find_library( log-lib
               log )
 find_library( android-lib
@@ -48,7 +48,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
 include_directories(src/main/cpp)
 include_directories(src/main/jniLibs/include)
 
-target_link_libraries(native-ffmpeg
+target_link_libraries(native_ffmpeg
                       avutil       #工具库(大部分需要)
                       swresample    #音频采样数据格式转换
                       avcodec      #编解码(重要)

@@ -3,6 +3,7 @@ package com.android.jerrystudy;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import java.io.File;
@@ -11,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private com.android.jerrystudy.VideoView mVideo;
+    private String TAG = this.getClass().getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void paly(View view) {
         final String dir = Environment.getExternalStorageDirectory() + File.separator + "Download";
-        final String path = dir + File.separator + "1.mp4";
+//        final String path = dir + File.separator + "1.mp4";
+        final String directory = "sdcard/1.mp4";
+        final String path = directory;
+        Log.i(TAG,"path:"+path);
         if (new File(path).exists()) {
             runOnUiThread(new Runnable() {
                 @Override
